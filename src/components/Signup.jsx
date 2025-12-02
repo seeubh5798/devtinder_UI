@@ -16,7 +16,7 @@ const SignupPage = () => {
     password: "",
     age: "",
     gender: "",
-    photourl: "",
+    photourl: "https://toppng.com//public/uploads/preview/donna-picarro-dummy-avatar-115633298255iautrofxa.png",
     bio: "",
     skills: ""
   });
