@@ -11,6 +11,7 @@ import Feed from "./components/Feed";
 import Connections from "./components/Connections";
 import Requests from "./components/Requests";
 import Sent from "./components/Sent";
+import Chat from "./components/Chat";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Route path="/connections" element={<Connections />} />
       <Route path="/requests" element={<Requests />} />
       <Route path="/sent" element={<Sent />} />
+      <Route path="/chat/:targetUserId" element={<Chat />} />
     
     </Route>
     </Routes>

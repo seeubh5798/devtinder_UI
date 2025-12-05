@@ -23,7 +23,7 @@ const Sent = () => {
         {},
         { withCredentials: true }
       );
-      console.log(res);
+    //   console.log(res);
 
       // remove from UI
       setsent((prev) => prev.filter((req) => req._id !== id));

@@ -15,7 +15,7 @@ const Feed = () => {
     const res = await axios.get(BASE_URL + "/user/feed", {
       withCredentials: true,
     });
-    console.log(res);
+    // console.log(res);
     dispath(addFeed(res.data));
   };
 
@@ -51,6 +51,7 @@ const Feed = () => {
     );
   }
   
+  // console.log("feed", feed)
   return (
     <>
       {feed && 
@@ -58,7 +59,8 @@ const Feed = () => {
           return (
            <Usercard photourl={f.photourl} firstName= {f.firstName} lastName = {f.lastName} age ={f.age} gender={f.gender} setactiveidx={()=> setactiveidx(idx=> idx+1)} show={i==activeidx} id={f._id}/>
           );
-        })}
+        })
+        }
     </>
   );
 };

@@ -29,12 +29,10 @@ const Body = () => {
         }
         catch(e){
             navigate("/login");
-            console.log(e);
         }
     }
 
     useEffect(()=>{
-        console.log("body component useeffect running")
         if(!user){
             fetchUser();
         }

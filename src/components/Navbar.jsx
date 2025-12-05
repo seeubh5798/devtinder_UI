@@ -10,14 +10,14 @@ const Navbar = () => {
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(user);
+//   console.log(user);
 
   async function logout(){
     try{
         const res = await axios.get(BASE_URL+"/logout", { withCredentials : true });
         dispatch(removeUser());
         dispatch(removeFeed())
-        console.log(res);
+        // console.log(res);
        
 
     }

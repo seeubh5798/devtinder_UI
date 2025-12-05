@@ -1,9 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BASE_URL } from "../utils/constant";
+import { useNavigate } from "react-router-dom";
 
 const Connections = () => {
   const [connected, setconnected] = useState([]);
+  const navigate = useNavigate();
 
   async function fetchconnections() {
     try {
@@ -12,10 +14,18 @@ const Connections = () => {
       });
       setconnected(res?.data?.resData || []);
     } catch (e) {
-      console.log(e);
+    //   console.log(e);
     }
   }
 
+  function openchat(id, firstName, lastName){
+    navigate(`/chat/${id}`, {
+        state : {
+            firstName : firstName,
+            lastName : lastName
+        }
+    })
+  }
   useEffect(() => {
     fetchconnections();
   }, []);
@@ -29,9 +39,11 @@ const Connections = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-6">
-      <h1 className="text-3xl font-bold text-center mb-6">Your Connections ❤️</h1>
+      <h1 className="text-3xl font-bold text-center mb-6">
+        Your Connections ❤️
+      </h1>
 
-      {/* Tinder/Bumble card grid */}
+      {/* Tinder/Bumble style grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {connected.map((user, index) => (
           <div
@@ -67,6 +79,18 @@ const Connections = () => {
                   {user.bio}
                 </p>
               )}
+
+              {/* ⭐ Chat Button */}
+              <button
+                onClick={() => openchat(user._id, user.firstName, user.lastName)}
+                className="
+                  mt-4 w-full bg-gradient-to-r from-pink-500 to-red-500 
+                  text-white font-semibold py-2 rounded-xl shadow-md
+                  hover:opacity-90 transition duration-200 transform hover:scale-105
+                "
+              >
+                💬 Chat Now
+              </button>
             </div>
           </div>
         ))}

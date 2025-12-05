@@ -18,8 +18,8 @@ const Requests = () => {
     }
   }
 
-  console.log("accepted", accepted)
-  console.log("rejected", rejected)
+//   console.log("accepted", accepted)
+//   console.log("rejected", rejected)
 
   async function handlerequest(reqType, id){
         const res = await axios.post(BASE_URL+"/request/review/"+reqType+"/"+id,{}, { withCredentials : true});
@@ -64,7 +64,7 @@ const Requests = () => {
         <span> Rejected succesfully.</span>
       </div>
     }
-    
+
     if (requests.length === 0)
         return (
           <div className="min-h-screen flex items-center justify-center text-gray-600 text-xl">

@@ -33,7 +33,7 @@ const SignupPage = () => {
   const handleSignup = async () => {
     try{
       const res = await axios.post(BASE_URL+"/signup", {...form}, {withCredentials : true});
-      console.log(res);
+      // console.log(res);
       gotoSignin()
 
     }

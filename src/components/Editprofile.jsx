@@ -44,7 +44,7 @@ const EditProfile = ({ user, setedit }) => {
         },
         { withCredentials: true }
       );
-      console.log(updates);
+      // console.log(updates);
       dispatch(addUser(updates?.data?.message));
       setshowsuccess(true);
     } catch (e) {

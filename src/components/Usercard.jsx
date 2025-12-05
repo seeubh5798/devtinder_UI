@@ -18,13 +18,13 @@ const Usercard = ({
   async function sendRequest(status){
 
     const res = await axios.post(BASE_URL+"/request/send/"+status+"/"+id, {}, {withCredentials : true});
-    console.log(res);
+    // console.log(res);
   }
   // LEFT swipe effect
   const handleLeft = async () => {
     setAnimation("swipe-left");
     const response = await sendRequest("ignored");
-    console.log(response);
+    // console.log(response);
     setTimeout(() => {
       setactiveidx();
       setAnimation(""); // reset animation for next card
@@ -35,7 +35,7 @@ const Usercard = ({
   const handleRight = async () => {
     setAnimation("swipe-right")
     const response = await sendRequest("interested");
-    console.log(response)
+    // console.log(response)
     setTimeout(() => {
       
       setactiveidx();
