@@ -8,3 +8,6 @@
 - install cors in backend, add middleware with configurations and add withcredentials:true in frontend
 -  push user data in redux store
 - refreshing the page should not logout the user - in body component, check if we haven token or not-> if yes, go to
+
+
+Signup/Login using - https://devconnectr.in/
